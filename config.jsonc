@@ -1,0 +1,142 @@
+{
+  "logo": {
+    "source": "~/.config/fastfetch/images/cachy.png",
+    "type": "kitty",
+    "width": 30,
+    "height": 18,
+    "padding": {
+      "top": 2,
+      "right": 2,
+      "left": 2
+    }
+  },
+
+  "display": {
+    "key": {
+      "type": "string"
+    },
+    "separator": " ",
+    "bar": {
+      "width": 8,
+      "char": {
+        "elapsed": "■",
+        "total": "·"
+      }
+    },
+    "percent": {
+      "type": 2
+    },
+    "size": {
+      "maxPrefix": "TB",
+      "binaryPrefix": "si",
+      "ndigits": 1
+    }
+  },
+
+  "modules": [
+    "break",
+
+    {
+      "type": "custom",
+      "format": "\u001b[38;5;218m┌──────────── Hardware ────────────┐"
+    },
+    {
+      "type": "board",
+      "key": "󰒅     ",
+      "keyColor": "38;5;218",
+      "format": "{name}"
+    },
+    {
+      "type": "cpu",
+      "key": "󰍛     ",
+      "keyColor": "38;5;218",
+      "format": "{name}"
+    },
+    {
+      "type": "custom",
+      "key": "󰓅     ",
+      "keyColor": "38;5;218",
+      "format": "{ram-total} GB"
+    },
+    {
+      "type": "custom",
+      "key": "󰾲     ",
+      "keyColor": "38;5;218",
+      "format": "{gpu-name}"
+    },
+    {
+      "type": "disk",
+      "key": "󰋊     ",
+      "keyColor": "38;5;218",
+      "format": "{size-percentage-bar} {size-free}",
+      "useAvailable": false,
+      "showSubvolumes": false,
+      "folders": "/"
+    },
+    {
+      "type": "custom",
+      "format": "\u001b[38;5;218m└──────────────────────────────────┘"
+    },
+
+    "break",
+
+    {
+      "type": "custom",
+      "format": "\u001b[38;5;117m┌──────────── Software ────────────┐"
+    },
+    {
+      "type": "os",
+      "key": "󰣇     ",
+      "keyColor": "38;5;117",
+      "format": "{name}"
+    },
+{
+  "type": "kernel",
+  "key": "󰓛     ",
+  "keyColor": "38;5;117",
+  "format": "{release}"
+},
+    {
+      "type": "command",
+      "key": "󰢮     ",
+      "keyColor": "38;5;117",
+      "text": "glxinfo 2>/dev/null | grep 'OpenGL version' | sed 's/.*: //'"
+    },
+
+    {
+      "type": "custom",
+      "format": "\u001b[38;5;117m└──────────────────────────────────┘"
+    },
+
+    "break",
+
+    {
+      "type": "custom",
+      "format": "\u001b[38;5;221m┌───────── Miscellaneous ──────────┐"
+    },
+    {
+      "type": "uptime",
+      "key": "󱫐",
+      "keyColor": "38;5;221",
+      "format": "{hours} hours {minutes} minutes"
+    },
+    {
+      "type": "disk",
+      "key": "󰥔",
+      "keyColor": "38;5;221",
+      "folders": "/",
+      "format": "Day {days}"
+    },
+    {
+      "type": "custom",
+      "format": "\u001b[38;5;221m└──────────────────────────────────┘"
+    },
+
+    "break",
+
+    {
+      "type": "colors",
+      "symbol": "circle"
+    }
+  ]
+}
