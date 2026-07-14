@@ -6,8 +6,6 @@ A clean, categorized fastfetch config with a box-drawn layout.
 
 ## Install
 
-> **Warning:** These will overwrite your existing `config.jsonc`. Back up your current config first if you want to keep it.
-
 ### Download only (~/Downloads)
 
 ```bash
@@ -15,6 +13,8 @@ git clone https://github.com/Goodborn/fastfetchkonfig.git ~/Downloads/fastfetch
 ```
 
 ### Download and install directly
+
+> **Warning:** This will overwrite your existing `config.jsonc`. Back up your current config first if you want to keep it.
 
 ```bash
 git clone https://github.com/Goodborn/fastfetchkonfig.git /tmp/fastfetch && cp /tmp/fastfetch/config.jsonc ~/.config/fastfetch/config.jsonc && cp -r /tmp/fastfetch/images/ ~/.config/fastfetch/images/ && cp -r /tmp/fastfetch/ascii/ ~/.config/fastfetch/ascii/ && rm -rf /tmp/fastfetch
