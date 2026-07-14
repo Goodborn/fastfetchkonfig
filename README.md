@@ -35,6 +35,8 @@ All editable values are in `config.jsonc`. Everything else is auto-detected.
 | RAM display | `59` | `{ram-total} GB` | `{ram-used} GB / {ram-total} GB` |
 | GPU display | `65` | `{gpu-name}` | `{gpu-vendor} {gpu-name}` |
 | Disks shown | `74` | `"/"` | `"/:/mnt/Data:/mnt/Backup"` |
+
+To show multiple disks, add mount points separated by `:`. Find yours with `lsblk` or `df -h`.
 | GPU driver | `103` | `glxinfo ...` | `nvidia-smi ...` for NVIDIA |
 
 ```jsonc
