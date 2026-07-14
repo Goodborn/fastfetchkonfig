@@ -2,11 +2,12 @@
 
 A clean, categorized fastfetch config with a box-drawn layout.
 
-### CachyOS
-![CachyOS](cachyospreview.png)
-
-### Nobara
-![Nobara](nobarapreview.png)
+<table>
+  <tr>
+    <td><b>CachyOS</b><br><img src="cachyospreview.png" width="400"></td>
+    <td><b>Nobara</b><br><img src="nobarapreview.png" width="400"></td>
+  </tr>
+</table>
 
 ## Install
 
