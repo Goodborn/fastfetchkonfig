@@ -6,6 +6,8 @@ A clean, categorized fastfetch config with a box-drawn layout.
 
 ## Install
 
+> **Warning:** This will overwrite your existing `config.jsonc`. Back up your current config first if you want to keep it.
+
 ```bash
 cp config.jsonc ~/.config/fastfetch/config.jsonc
 cp -r images/ ~/.config/fastfetch/images/
