@@ -35,11 +35,36 @@ cp -r images/ ~/.config/fastfetch/images/
 cp -r ascii/ ~/.config/fastfetch/ascii/
 ```
 
-## Customization
+## Customize
 
-- **Logo**: Replace `~/.config/fastfetch/images/cachy.png` with your distro logo, or change the path in `config.jsonc`. ASCII art alternatives are in `ascii/`.
-- **Secondary disks**: Add mount points to the `folders` field in the Hardware disk module (e.g. `"/:/mnt/Data"`).
-- **GPU driver**: The driver command uses `glxinfo` which works for most GPUs. For NVIDIA-only, replace with `nvidia-smi --query-gpu=driver_version --format=csv,noheader`.
+All editable values are in `config.jsonc`. Everything else is auto-detected.
+
+| What | Line | Default | Change to |
+|------|------|---------|-----------|
+| Logo image | `3` | `~/.config/fastfetch/images/cachy.png` | Your logo path |
+| RAM display | `59` | `{ram-total} GB` | `{ram-used} GB / {ram-total} GB` |
+| GPU display | `65` | `{gpu-name}` | `{gpu-vendor} {gpu-name}` |
+| Disks shown | `74` | `"/"` | `"/:/mnt/Data:/mnt/Backup"` |
+| GPU driver | `103` | `glxinfo ...` | `nvidia-smi ...` for NVIDIA |
+
+```jsonc
+// Logo — point to your distro image or an ASCII art file
+"source": "~/.config/fastfetch/images/cachy.png"
+
+// RAM — swap between total, used, or percentage
+"format": "{ram-total} GB"
+
+// GPU — auto-detected, no need to hardcode
+"format": "{gpu-name}"
+
+// Disks — colon-separated list of mount points
+"folders": "/:/mnt/Backup"
+
+// GPU driver — glxinfo (all), nvidia-smi (NVIDIA), or remove the module entirely
+"text": "glxinfo 2>/dev/null | grep 'OpenGL version' | sed 's/.*: //'"
+```
+
+Drop your logo PNG into `images/`, or swap the logo source to an ASCII art file from `ascii/`.
 
 ## Requirements
 
