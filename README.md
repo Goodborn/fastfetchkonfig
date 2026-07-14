@@ -27,36 +27,17 @@ git clone https://github.com/Goodborn/fastfetchkonfig.git /tmp/fastfetch && cp /
 
 ## Customize
 
-All editable values are in `config.jsonc`. Everything else is auto-detected.
-
-| What | Line | Default | Change to |
-|------|------|---------|-----------|
-| Logo image | `3` | `~/.config/fastfetch/images/cachy.png` | Your logo path |
-| RAM display | `59` | `{ram-total} GB` | `{ram-used} GB / {ram-total} GB` |
-| GPU display | `65` | `{gpu-name}` | `{gpu-vendor} {gpu-name}` |
-| Disks shown | `74` | `"/"` | `"/:/mnt/Data:/mnt/Backup"` |
-
-To show multiple disks, add mount points separated by `:`. Find yours with `lsblk` or `df -h`.
-| GPU driver | `103` | `glxinfo ...` | `nvidia-smi ...` for NVIDIA |
+Edit `config.jsonc` to change these values:
 
 ```jsonc
-// Logo — point to your distro image or an ASCII art file
-"source": "~/.config/fastfetch/images/cachy.png"
-
-// RAM — swap between total, used, or percentage
-"format": "{ram-total} GB"
-
-// GPU — auto-detected, no need to hardcode
-"format": "{gpu-name}"
-
-// Disks — colon-separated list of mount points
-"folders": "/:/mnt/Backup"
-
-// GPU driver — glxinfo (all), nvidia-smi (NVIDIA), or remove the module entirely
-"text": "glxinfo 2>/dev/null | grep 'OpenGL version' | sed 's/.*: //'"
+"source": "~/.config/fastfetch/images/cachy.png"  // your logo
+"format": "{ram-total} GB"                         // RAM display
+"format": "{gpu-name}"                             // GPU display
+"folders": "/"                                     // disks to show, e.g. "/:/mnt/HDD"
+"text": "glxinfo 2>/dev/null | grep 'OpenGL version' | sed 's/.*: //'"  // GPU driver
 ```
 
-Drop your logo PNG into `images/`, or swap the logo source to an ASCII art file from `ascii/`.
+Drop your logo PNG into `images/` or use an ASCII art file from `ascii/`. Find disk mount points with `lsblk` or `df -h`.
 
 ## Requirements
 
