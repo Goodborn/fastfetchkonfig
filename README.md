@@ -22,7 +22,7 @@ git clone https://github.com/Goodborn/fastfetchkonfig.git ~/Downloads/fastfetch
 > **Warning:** This will overwrite your existing `config.jsonc`. Back up your current config first if you want to keep it.
 
 ```bash
-git clone https://github.com/Goodborn/fastfetchkonfig.git /tmp/fastfetch && cp /tmp/fastfetch/config.jsonc ~/.config/fastfetch/config.jsonc && cp -r /tmp/fastfetch/images/ ~/.config/fastfetch/images/ && cp -r /tmp/fastfetch/ascii/ ~/.config/fastfetch/ascii/ && rm -rf /tmp/fastfetch
+git clone https://github.com/Goodborn/fastfetchkonfig.git /tmp/fastfetch && mkdir -p ~/.config/fastfetch && cp /tmp/fastfetch/config.jsonc ~/.config/fastfetch/config.jsonc && cp -r /tmp/fastfetch/images/ ~/.config/fastfetch/images/ && cp -r /tmp/fastfetch/ascii/ ~/.config/fastfetch/ascii/ && rm -rf /tmp/fastfetch
 ```
 
 ## Customize
